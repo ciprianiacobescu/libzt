@@ -22,7 +22,8 @@ def build_cmult(c):
     """ Build the shared library for the sample C code """
     print_banner("Building C Library")
     invoke.run("gcc -c -Wall -Werror -fpic cmult.c -I /usr/include/python3.7")
-    invoke.run("gcc -shared -o libcmult.so cmult.o")
+    #invoke.run("gcc -shared -o libcmult.so cmult.o")
+    invoke.run("ar -rcs libcmult.a cmult.o")
     print("* Complete")
 
 
@@ -58,7 +59,7 @@ def build_cffi(c):
         extra_link_args=["-Wl,-rpath,."],
     )
 
-    ffi.compile()
+    ffi.compile(verbose=True)
     print("* Complete")
 
 

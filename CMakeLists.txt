@@ -163,6 +163,7 @@ endif ()
 
 if (BUILDING_LINUX AND NOT BUILDING_ANDROID)
 	set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -lpthread")
+	SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
 endif ()
 
 # WINDOWS-specific MSVC flags and libraries

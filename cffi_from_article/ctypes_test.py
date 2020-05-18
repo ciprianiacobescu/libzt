@@ -6,7 +6,7 @@ import pathlib
 
 if __name__ == "__main__":
     # Load the shared library into c types.
-    libname = pathlib.Path().absolute() / "libcmult.so"
+    libname = pathlib.Path().absolute() / "libcmult.a"
     c_lib = ctypes.CDLL(libname)
 
     # Sample data for our call:
